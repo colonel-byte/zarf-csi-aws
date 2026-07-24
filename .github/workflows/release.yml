@@ -28,7 +28,7 @@ jobs:
         flavor:
           - upstream
         type:
-          - ccm
+          - pkg-ccm
           - csi-ebs
           - csi-efs
         arch:
