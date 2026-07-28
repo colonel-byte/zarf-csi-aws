@@ -9,8 +9,7 @@
     "@A1994SC"
   ],
   baseBranchPatterns: [
-    "main",
-    "/^release\\/.*/"
+    "main"
   ],
   packageRules: [
     {
