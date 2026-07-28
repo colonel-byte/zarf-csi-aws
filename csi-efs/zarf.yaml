@@ -1,0 +1,32 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/zarf-dev/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: csi-aws-efs
+  # renovate: datasource=helm depName=aws-efs-csi-driver registryUrl=https://kubernetes-sigs.github.io/aws-efs-csi-driver
+  version: 4.4.1
+  source: https://github.com/colonel-byte/zarf-csi-aws
+  annotations:
+    org.opencontainers.image.source: https://github.com/colonel-byte/zarf-csi-aws
+    org.opencontainers.image.description: Zarf package for deploying AWS Cloud Controller Manager
+x-charts:
+  csi-efs: []
+components:
+  - name: csi-efs-chart
+    only:
+      flavor: upstream
+    charts:
+      - name: aws-efs-csi-driver
+        namespace: kube-system
+        releaseName: aws-efs-csi-driver
+        noWait: true
+        url: https://kubernetes-sigs.github.io/aws-efs-csi-driver
+        # renovate: datasource=helm depName=aws-efs-csi-driver registryUrl=https://kubernetes-sigs.github.io/aws-efs-csi-driver
+        version: 4.4.1
+        valuesFiles:
+          - values.yaml
+    images:
+      - public.ecr.aws/csi-components/csi-node-driver-registrar:v2.17.0-eksbuild.3
+      - public.ecr.aws/csi-components/csi-provisioner:v6.3.0-eksbuild.2
+      - public.ecr.aws/csi-components/livenessprobe:v2.19.0-eksbuild.3
+      - public.ecr.aws/efs-csi-driver/amazon/aws-efs-csi-driver:v3.4.1
