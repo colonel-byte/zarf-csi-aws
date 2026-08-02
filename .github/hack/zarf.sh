@@ -4,7 +4,7 @@ set -u
 set -o pipefail
 
 declare -a FLAVOR=("upstream")
-declare -a COMPONENTS=("ccm" "csi-ebs" "csi-efs")
+declare -a COMPONENTS=("pkg-ccm" "csi-ebs" "csi-efs")
 declare -a COMPONENTS_TYPES=("")
 
 for flavor in "${FLAVOR[@]}"; do

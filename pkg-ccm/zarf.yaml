@@ -4,15 +4,15 @@ kind: ZarfPackageConfig
 metadata:
   name: pkg-aws-ccm
   # renovate: datasource=helm depName=aws-cloud-controller-manager registryUrl=https://kubernetes.github.io/cloud-provider-aws
-  version: 0.0.11
+  version: v0.0.9
   source: https://github.com/colonel-byte/zarf-csi-aws
   annotations:
     org.opencontainers.image.source: https://github.com/colonel-byte/zarf-csi-aws
     org.opencontainers.image.description: Zarf package for deploying AWS Cloud Controller Manager
 x-charts:
-  ccm: []
+  pkg-ccm: []
 components:
-  - name: ccm-chart
+  - name: pkg-ccm-chart
     only:
       flavor: upstream
     charts:
@@ -22,8 +22,8 @@ components:
         noWait: true
         url: https://kubernetes.github.io/cloud-provider-aws
         # renovate: datasource=helm depName=aws-cloud-controller-manager registryUrl=https://kubernetes.github.io/cloud-provider-aws
-        version: 0.0.11
+        version: 0.0.9
         valuesFiles:
           - values.yaml
     images:
-      - registry.k8s.io/provider-aws/cloud-controller-manager:v1.35.0
+      - registry.k8s.io/provider-aws/cloud-controller-manager:v1.33.0
