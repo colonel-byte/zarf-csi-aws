@@ -4,7 +4,7 @@ kind: ZarfPackageConfig
 metadata:
   name: csi-aws-ebs
   # renovate: datasource=helm depName=aws-ebs-csi-driver registryUrl=https://kubernetes-sigs.github.io/aws-ebs-csi-driver
-  version: 2.63.0
+  version: 2.63.1
   source: https://github.com/colonel-byte/zarf-csi-aws
   annotations:
     org.opencontainers.image.source: https://github.com/colonel-byte/zarf-csi-aws
@@ -22,7 +22,7 @@ components:
         noWait: true
         url: https://kubernetes-sigs.github.io/aws-ebs-csi-driver
         # renovate: datasource=helm depName=aws-ebs-csi-driver registryUrl=https://kubernetes-sigs.github.io/aws-ebs-csi-driver
-        version: 2.63.0
+        version: 2.63.1
         valuesFiles:
           - values.yaml
     images:
