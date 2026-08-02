@@ -1,0 +1,5 @@
+---
+imagePullSecrets:
+  - name: private-registry
+helmTester:
+  enabled: false
