@@ -4,7 +4,7 @@ kind: ZarfPackageConfig
 metadata:
   name: csi-aws-ebs
   # renovate: datasource=helm depName=aws-ebs-csi-driver registryUrl=https://kubernetes-sigs.github.io/aws-ebs-csi-driver
-  version: v2.64.0
+  version: v2.65.0
   source: https://github.com/colonel-byte/zarf-csi-aws
   annotations:
     org.opencontainers.image.source: https://github.com/colonel-byte/zarf-csi-aws
@@ -22,13 +22,13 @@ components:
         noWait: true
         url: https://kubernetes-sigs.github.io/aws-ebs-csi-driver
         # renovate: datasource=helm depName=aws-ebs-csi-driver registryUrl=https://kubernetes-sigs.github.io/aws-ebs-csi-driver
-        version: 2.64.0
+        version: 2.65.0
         valuesFiles:
           - values.yaml
     images:
-      - public.ecr.aws/csi-components/csi-attacher:v4.12.0-eksbuild.5
-      - public.ecr.aws/csi-components/csi-node-driver-registrar:v2.17.0-eksbuild.5
-      - public.ecr.aws/csi-components/csi-provisioner:v6.3.0-eksbuild.4
-      - public.ecr.aws/csi-components/csi-resizer:v2.2.1-eksbuild.3
-      - public.ecr.aws/csi-components/livenessprobe:v2.19.0-eksbuild.5
-      - public.ecr.aws/ebs-csi-driver/aws-ebs-csi-driver:v1.64.0
+      - public.ecr.aws/csi-components/csi-attacher:v4.12.0-eksbuild.6
+      - public.ecr.aws/csi-components/csi-node-driver-registrar:v2.17.0-eksbuild.6
+      - public.ecr.aws/csi-components/csi-provisioner:v6.3.0-eksbuild.5
+      - public.ecr.aws/csi-components/csi-resizer:v2.2.1-eksbuild.4
+      - public.ecr.aws/csi-components/livenessprobe:v2.19.0-eksbuild.6
+      - public.ecr.aws/ebs-csi-driver/aws-ebs-csi-driver:v1.65.0
